@@ -6,7 +6,6 @@ import PieChart from 'react-native-pie-chart'
 
 export default function Data() {
   const [value, setValue] = useState();
-  const sliceColor = ['#fbd203', '#ffb300', '#ff9100', '#ff6c00', '#ff3c00']
   const widthAndHeight = 250
 
   useEffect(() => {
@@ -24,7 +23,12 @@ export default function Data() {
       />
     );
   }
-  const series = value.age
+  const generateColor = () => {
+    const randomColor = Math.floor(Math.random() * 16777215)
+      .toString(16)
+      .padStart(6, '0');
+    return `#${randomColor}`;
+  };
 
   return (
     <ScrollView>
@@ -42,8 +46,8 @@ export default function Data() {
       </DataTable>
       <PieChart
             widthAndHeight={widthAndHeight}
-            series={series}
-            sliceColor={sliceColor}
+            series={value.age}
+            sliceColor={generateColor()}
             coverRadius={0.45}
             coverFill={'#FFF'}
           />
@@ -52,7 +56,7 @@ export default function Data() {
 }
 const styles = StyleSheet.create({
   container: {
-    padding: 15,
+    padding: 25,
     margin: 20,
     borderWidth: 4,
     borderRadius: 20,
@@ -73,5 +77,6 @@ const styles = StyleSheet.create({
   },
   tableHeader: {
     backgroundColor: "#DCDCDC",
+
   },
 });
