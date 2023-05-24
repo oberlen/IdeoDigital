@@ -15,10 +15,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "top",
-    fontSize:30,
+    fontSize: 50,
     fontWeight: "bold",
-    marginTop:40
-
+    margin: 40,
+    padding: 40,
   },
 });
