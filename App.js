@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
-import Data from "./data";
+import Data from "./Components/data";
 
 export default function App() {
   return (

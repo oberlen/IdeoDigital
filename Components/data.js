@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { StyleSheet, ScrollView, ActivityIndicator } from "react-native";
 import FetchData from "./FetchData";
 import { DataTable } from "react-native-paper";
-import PieChart from 'react-native-pie-chart'
+import PieChart from "react-native-pie-chart";
 
 export default function Data() {
   const [value, setValue] = useState();
-  const widthAndHeight = 250
+  const widthAndHeight = 250;
 
   useEffect(() => {
     let data = async () => {
@@ -26,7 +26,7 @@ export default function Data() {
   const generateColor = () => {
     const randomColor = Math.floor(Math.random() * 16777215)
       .toString(16)
-      .padStart(6, '0');
+      .padStart(6, "0");
     return `#${randomColor}`;
   };
 
@@ -45,12 +45,12 @@ export default function Data() {
         ))}
       </DataTable>
       <PieChart
-            widthAndHeight={widthAndHeight}
-            series={value.age}
-            sliceColor={generateColor()}
-            coverRadius={0.45}
-            coverFill={'#FFF'}
-          />
+        widthAndHeight={widthAndHeight}
+        series={value.age}
+        sliceColor={generateColor()}
+        coverRadius={0.45}
+        coverFill={"#FFF"}
+      />
     </ScrollView>
   );
 }
@@ -77,6 +77,5 @@ const styles = StyleSheet.create({
   },
   tableHeader: {
     backgroundColor: "#DCDCDC",
-
   },
 });
